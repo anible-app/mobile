@@ -2,7 +2,6 @@
 
 buildscript {
     ext {
-        buildToolsVersion = "29.0.3"
         minSdkVersion = 21
         compileSdkVersion = 29
         targetSdkVersion = 29
@@ -10,10 +9,10 @@ buildscript {
     }
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
     dependencies {
-        classpath("com.android.tools.build:gradle:4.1.0")
+        classpath('com.android.tools.build:gradle:7.0.0-beta04')
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -32,7 +31,17 @@ allprojects {
         }
 
         google()
-        jcenter()
+        mavenCentral()
+        // we can't do anything till facebook puts
+        // these up on maven central
+        //noinspection JcenterRepositoryObsolete
+        jcenter(){
+            content {
+                includeGroup("com.facebook.yoga")
+                includeGroup("com.facebook.fresco")
+                includeGroup("com.facebook.fbjni")
+            }
+        }
         maven { url 'https://www.jitpack.io' }
     }
 }
