@@ -11,7 +11,6 @@ import {ThemeProvider, darkTheme, lightTheme} from './utils/ThemeContext';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import changeNavigationBarColor from 'react-native-navigation-bar-color';
-import {StackParamList} from './utils/Types';
 import Home from './screens/Home';
 import {StyleSheet} from 'react-native';
 
