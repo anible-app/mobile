@@ -9,6 +9,7 @@ type AppTheme = {
 
 type StackParamList = {
   Home: undefined;
+  Login: undefined;
   // add additional screens here!
 };
 

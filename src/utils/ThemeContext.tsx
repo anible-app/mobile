@@ -4,9 +4,9 @@ export const darkTheme: AppTheme = {
   isDark: true,
 
   statusBar: 'light',
-  bg: '#171717',
+  bg: '#121212',
   text: '#fbfbfb',
-  accentColor: '#486682',
+  accentColor: '#4285F4',
 };
 
 export const lightTheme: AppTheme = {
@@ -15,7 +15,7 @@ export const lightTheme: AppTheme = {
   statusBar: 'dark',
   bg: '#F5F5F5',
   text: '#1a2552',
-  accentColor: '#4C67D4',
+  accentColor: '#4285F4',
 };
 
 export const ThemeContext = React.createContext({

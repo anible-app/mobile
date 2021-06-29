@@ -1,17 +1,13 @@
 import React, {useEffect, useState} from 'react';
-import {
-  configureFonts,
-  DefaultTheme,
-  Provider as PaperProvider,
-} from 'react-native-paper';
+import {configureFonts, DefaultTheme, Provider as PaperProvider} from 'react-native-paper';
 import {StatusBar, StatusBarStyle} from 'expo-status-bar';
-import {SafeAreaView} from 'react-native-safe-area-context';
 import {Appearance, View} from 'react-native';
 import {ThemeProvider, darkTheme, lightTheme} from './utils/ThemeContext';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import changeNavigationBarColor from 'react-native-navigation-bar-color';
 import Home from './screens/Home';
+import Login from './screens/Login';
 import {StyleSheet} from 'react-native';
 
 const theme = {
@@ -46,9 +42,7 @@ const theme = {
 
 export default function Main() {
   // keep track of app theme so that it can be changed internally
-  const [currentTheme, setCurrentTheme] = useState(() =>
-    Appearance.getColorScheme() === 'dark' ? darkTheme : lightTheme,
-  );
+  const [currentTheme, setCurrentTheme] = useState(() => (Appearance.getColorScheme() === 'dark' ? darkTheme : lightTheme));
 
   // change app theme when the system theme changes
   useEffect(() => {
@@ -65,11 +59,7 @@ export default function Main() {
 
   // change the navigation bar color when the app theme changes
   useEffect(() => {
-    changeNavigationBarColor(
-      currentTheme.bg,
-      currentTheme.bg === lightTheme.bg,
-      false,
-    );
+    changeNavigationBarColor(currentTheme.bg, currentTheme.bg === lightTheme.bg, false);
   }, [currentTheme]);
 
   const ls = StyleSheet.create({
@@ -88,13 +78,13 @@ export default function Main() {
         <ThemeProvider
           value={{
             theme: currentTheme,
-            switchTheme: () =>
-              setCurrentTheme(currentTheme.isDark ? lightTheme : darkTheme),
+            switchTheme: () => setCurrentTheme(currentTheme.isDark ? lightTheme : darkTheme),
           }}>
           <View style={ls.root}>
-            <SafeAreaView style={ls.safeArea}>
-              <App />
-            </SafeAreaView>
+            {/* TODO fix this hack  */}
+            {/* <SafeAreaView style={ls.safeArea}> */}
+            <App />
+            {/* </SafeAreaView> */}
           </View>
         </ThemeProvider>
         <StatusBar style={currentTheme.statusBar as StatusBarStyle} />
@@ -108,6 +98,7 @@ const Stack = createStackNavigator<StackParamList>();
 function App() {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="Home" component={Home} />
     </Stack.Navigator>
   );
