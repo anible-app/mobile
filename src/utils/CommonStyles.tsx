@@ -7,6 +7,11 @@ export const getCommonStyles = (theme: AppTheme) => {
       backgroundColor: theme.bg,
     },
 
+    safe: {
+      flex: 1,
+      backgroundColor: theme.bg,
+    },
+
     // text related styles
     textLight: {
       fontFamily: 'Inter-Light',

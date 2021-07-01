@@ -3,8 +3,9 @@ import React from 'react';
 import {StackScreenProps} from '@react-navigation/stack';
 import {ThemeContext} from '../utils/ThemeContext';
 
-import {View} from 'react-native';
+import {StyleSheet, View, Text} from 'react-native';
 import {getCommonStyles} from '../utils/CommonStyles';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
 type Props = StackScreenProps<StackParamList, 'ScreenName'>;
 
@@ -13,12 +14,13 @@ export default function ScreenName(_navProps: Props) {
 
   const styles = getCommonStyles(theme);
 
+  const ls = StyleSheet.create({});
+
   return (
-    <View style={styles.root}>
-      {/* debug square, remove this! */}
-      <View style={{height: 200, width: 200, backgroundColor: '#f44336'}} />
-    </View>
+    <SafeAreaView style={styles.safe}>
+      <View style={styles.root}>
+        <Text>Hello</Text>
+      </View>
+    </SafeAreaView>
   );
 }
-
-// make sure to add ScreenName in StackParamList (declarations.d.ts)
