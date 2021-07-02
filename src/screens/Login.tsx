@@ -92,7 +92,15 @@ export default function Login(_navProps: Props) {
 
             <View style={{paddingHorizontal: 20, paddingVertical: 20, alignSelf: 'center', flexDirection: 'row', alignItems: 'center'}}>
               <IconButton icon={GoogleIcon} style={{...ls.miscButton, backgroundColor: '#fbfbfb', opacity: 0.8}} />
-              <IconButton icon={LoginIcon} style={ls.loginButton} />
+              <IconButton
+                icon={LoginIcon}
+                style={ls.loginButton}
+                onPress={() => {
+                  changeNavigationBarColor(theme.bg, !theme.isDark, false);
+                  _navProps.navigation.navigate('Home');
+                }}
+              />
+
               <IconButton icon={ForgotIcon} style={{...ls.miscButton, backgroundColor: '#fbfbfb', opacity: 0.8}} />
             </View>
           </animated.View>
