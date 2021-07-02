@@ -16,6 +16,8 @@ target 'anible' do
 
   pod 'RNSVG', :path => '../node_modules/react-native-svg'
 
+  pod 'BVLinearGradient', :path => '../node_modules/react-native-linear-gradient'
+
   target 'skeletonTests' do
     inherit! :complete
     # Pods for testing

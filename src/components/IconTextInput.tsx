@@ -3,7 +3,7 @@ import {View, TextInput, ViewStyle} from 'react-native';
 import {SvgProps} from 'react-native-svg';
 import {getCommonStyles} from '../utils/CommonStyles';
 
-export default (props: {icon: React.FC<SvgProps>; hint: string; theme: AppTheme; style?: ViewStyle}) => {
+export default function IconTextInput(props: {icon: React.FC<SvgProps>; hint: string; theme: AppTheme; style?: ViewStyle}) {
   const styles = getCommonStyles(props.theme);
   return (
     <View
@@ -33,4 +33,4 @@ export default (props: {icon: React.FC<SvgProps>; hint: string; theme: AppTheme;
       />
     </View>
   );
-};
+}

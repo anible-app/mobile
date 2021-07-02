@@ -8,6 +8,12 @@ import {getCommonStyles} from '../utils/CommonStyles';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {Settings} from 'react-native-feather';
 import {Text} from 'react-native';
+import HomeHeaderText from '../components/HomeHeaderText';
+import {useEffect} from 'react';
+import changeNavigationBarColor from 'react-native-navigation-bar-color';
+import HomeAnimeListItem from '../components/HomeAnimeListItem';
+
+// const HyoukaImage = require('../../assets/samples/hyouka_cover.png');
 
 type Props = StackScreenProps<StackParamList, 'Home'>;
 
@@ -15,6 +21,10 @@ export default function Home(_navProps: Props) {
   let {theme} = React.useContext(ThemeContext);
 
   const styles = getCommonStyles(theme);
+
+  useEffect(() => {
+    changeNavigationBarColor(theme.bg, !theme.isDark, false);
+  }, []);
 
   const ls = StyleSheet.create({
     headerView: {
@@ -25,7 +35,6 @@ export default function Home(_navProps: Props) {
       alignItems: 'center',
     },
     bodyView: {
-      paddingVertical: 10,
       paddingHorizontal: 25,
     },
   });
@@ -41,7 +50,10 @@ export default function Home(_navProps: Props) {
 
         {/* Body */}
         <View style={ls.bodyView}>
-          <Text style={{...styles.textSemiBold, fontSize: 22}}>Currently trending</Text>
+          <HomeHeaderText uncoloredText="Currently" coloredText="watching" theme={theme} />
+          <Text style={{...styles.textSemiBold, fontSize: 22, color: '#f44336'}}>TO BE IMPLEMENTED</Text>
+          <HomeHeaderText uncoloredText="Recently" coloredText="watched" theme={theme} style={{marginBottom: 12}} />
+          <HomeAnimeListItem theme={theme} />
         </View>
       </View>
     </SafeAreaView>
