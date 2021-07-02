@@ -7,6 +7,7 @@ export const darkTheme: AppTheme = {
   bg: '#050505',
   text: '#fbfbfb',
   accentColor: '#4285F4',
+  accentTwo: '#ffb8b8',
 };
 
 export const lightTheme: AppTheme = {
@@ -16,6 +17,7 @@ export const lightTheme: AppTheme = {
   bg: '#F5F5F5',
   text: '#1a2552',
   accentColor: '#4285F4',
+  accentTwo: '#f44336',
 };
 
 export const ThemeContext = React.createContext({

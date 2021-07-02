@@ -5,6 +5,7 @@ type AppTheme = {
   bg: string;
   text: string;
   accentColor: string;
+  accentTwo: string;
 };
 
 type StackParamList = {
