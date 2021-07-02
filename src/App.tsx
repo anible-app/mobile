@@ -59,7 +59,7 @@ export default function Main() {
 
   // change the navigation bar color when the app theme changes
   useEffect(() => {
-    changeNavigationBarColor(currentTheme.bg, currentTheme.bg === lightTheme.bg, false);
+    changeNavigationBarColor(currentTheme.bg, !currentTheme.isDark, false);
   }, [currentTheme]);
 
   const ls = StyleSheet.create({
@@ -81,10 +81,7 @@ export default function Main() {
             switchTheme: () => setCurrentTheme(currentTheme.isDark ? lightTheme : darkTheme),
           }}>
           <View style={ls.root}>
-            {/* TODO fix this hack  */}
-            {/* <SafeAreaView style={ls.safeArea}> */}
             <App />
-            {/* </SafeAreaView> */}
           </View>
         </ThemeProvider>
         <StatusBar style={currentTheme.statusBar as StatusBarStyle} />
