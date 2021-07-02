@@ -4,7 +4,7 @@ export const darkTheme: AppTheme = {
   isDark: true,
 
   statusBar: 'light',
-  bg: '#121212',
+  bg: '#050505',
   text: '#fbfbfb',
   accentColor: '#4285F4',
 };
