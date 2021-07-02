@@ -3,17 +3,13 @@ import React from 'react';
 import {StackScreenProps} from '@react-navigation/stack';
 import {ThemeContext} from '../utils/ThemeContext';
 import AnibleHeader from '../../assets/anible_header.svg';
-import {StyleSheet, View} from 'react-native';
+import {ScrollView, StyleSheet, View} from 'react-native';
 import {getCommonStyles} from '../utils/CommonStyles';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {Settings} from 'react-native-feather';
 import {Text} from 'react-native';
 import HomeHeaderText from '../components/HomeHeaderText';
-import {useEffect} from 'react';
-import changeNavigationBarColor from 'react-native-navigation-bar-color';
 import HomeAnimeListItem from '../components/HomeAnimeListItem';
-
-// const HyoukaImage = require('../../assets/samples/hyouka_cover.png');
 
 type Props = StackScreenProps<StackParamList, 'Home'>;
 
@@ -21,10 +17,6 @@ export default function Home(_navProps: Props) {
   let {theme} = React.useContext(ThemeContext);
 
   const styles = getCommonStyles(theme);
-
-  useEffect(() => {
-    changeNavigationBarColor(theme.bg, !theme.isDark, false);
-  }, []);
 
   const ls = StyleSheet.create({
     headerView: {
@@ -51,9 +43,13 @@ export default function Home(_navProps: Props) {
         {/* Body */}
         <View style={ls.bodyView}>
           <HomeHeaderText uncoloredText="Currently" coloredText="watching" theme={theme} />
-          <Text style={{...styles.textSemiBold, fontSize: 22, color: '#f44336'}}>TO BE IMPLEMENTED</Text>
+          <Text style={{...styles.textSemiBold, fontSize: 22, color: '#f44336'}}>soon tm</Text>
           <HomeHeaderText uncoloredText="Recently" coloredText="watched" theme={theme} style={{marginBottom: 12}} />
-          <HomeAnimeListItem theme={theme} />
+          <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+            <HomeAnimeListItem image={require('../../assets/samples/BokuNoHero.png')} name="Boku no Hero Academia" year="2019" genre="Fantasy" />
+            <HomeAnimeListItem image={require('../../assets/samples/Saenai.png')} name="Saenai Heroine no Sodatekata" year="2020" genre="Romance" />
+            <HomeAnimeListItem image={require('../../assets/samples/IdkWhich.png')} name="Rappu Toppu Coora" year="3069" genre="Jetto Costa" />
+          </ScrollView>
         </View>
       </View>
     </SafeAreaView>

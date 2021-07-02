@@ -8,7 +8,7 @@ export default function HomeHeaderText(props: {uncoloredText: string; coloredTex
 
   return (
     <Text style={{...styles.textSemiBold, fontSize: 22, marginTop: 20, ...props.style}}>
-      {props.uncoloredText} <Text style={{...styles.text, color: '#ffb8b8'}}>{props.coloredText}</Text>
+      {props.uncoloredText} <Text style={{...styles.text, color: props.theme.accentTwo}}>{props.coloredText}</Text>
     </Text>
   );
 }
