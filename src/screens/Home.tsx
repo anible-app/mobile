@@ -66,14 +66,32 @@ export default function Home(_navProps: Props) {
             uncoloredText="Recently"
             coloredText="watched"
             theme={theme}
-            style={{ marginBottom: 12, ...ls.padded }}
+            style={ls.padded}
           />
           <ScrollView
             horizontal={true}
             showsHorizontalScrollIndicator={false}
-            style={{ paddingEnd: 20 }}
+            style={{ paddingVertical: 12 }}
           >
             <View style={{ width: 25 }} />
+            <HomeAnimeListItem
+              image={require("../../assets/samples/BokuNoHero.png")}
+              name="Boku no Hero Academia"
+              year="2019"
+              genre="Fantasy"
+            />
+            <HomeAnimeListItem
+              image={require("../../assets/samples/Saenai.png")}
+              name="Saenai Heroine no Sodatekata"
+              year="2020"
+              genre="Romance"
+            />
+            <HomeAnimeListItem
+              image={require("../../assets/samples/IdkWhich.png")}
+              name="Rappu Toppu Coora"
+              year="3069"
+              genre="Jetto Costa"
+            />
             <HomeAnimeListItem
               image={require("../../assets/samples/BokuNoHero.png")}
               name="Boku no Hero Academia"
