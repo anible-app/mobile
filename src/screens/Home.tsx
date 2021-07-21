@@ -54,7 +54,7 @@ export default function Home(_navProps: Props) {
             style={{
               ...styles.textSemiBold,
               fontSize: 22,
-              color: "#f44336",
+              color: theme.accentTwo,
               ...ls.padded,
             }}
           >
