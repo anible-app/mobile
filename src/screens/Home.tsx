@@ -62,7 +62,7 @@ export default function Home(_navProps: Props) {
 
   return (
     <SafeAreaView style={styles.safe}>
-      <View style={styles.root}>
+      <ScrollView style={styles.root} showsVerticalScrollIndicator={false}>
         {/* Header */}
         <View style={{ ...ls.headerView, ...ls.padded }}>
           <AnibleHeader fill={theme.text} />
@@ -166,7 +166,7 @@ export default function Home(_navProps: Props) {
             />
           </ScrollView>
         </View>
-      </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }
