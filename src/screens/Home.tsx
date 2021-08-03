@@ -111,7 +111,7 @@ export default function Home(_navProps: Props) {
               }}
               inactiveDotOpacity={0.4}
               inactiveDotScale={0.6}
-              tappableDots={true}
+              tappableDots={false}
             />
           </View>
 
@@ -120,7 +120,7 @@ export default function Home(_navProps: Props) {
             uncoloredText="Recently"
             coloredText="watched"
             theme={theme}
-            style={ls.padded}
+            style={{ ...ls.padded, marginTop: -2 }}
           />
           <ScrollView
             horizontal={true}
