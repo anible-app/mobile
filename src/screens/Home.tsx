@@ -19,20 +19,21 @@ const data = [
   {
     title: "Hyouka",
     body:
-      "Ut tincidunt tincidunt erat. Sed cursus turpis vitae tortor. Quisque malesuada placerat nisl. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
-    imgUrl: "https://picsum.photos/id/11/200/300",
+      "Energy-conservative high school student Oreki ends up with more than he bargained for when he signs up for the Classics Club at his sister's behest, and is dragged into an investigation.",
+    imgUrl: "https://www.epicdope.com/wp-content/uploads/2020/06/Hyouka.jpg",
   },
   {
-    title: "Saenai",
+    title: "Saenai Heroine no Sodatekata",
     body:
-      "Aenean ut eros et nisl sagittis vestibulum. Donec posuere vulputate arcu. Proin faucibus arcu quis ante. Curabitur at lacus ac velit ornare lobortis. ",
-    imgUrl: "https://picsum.photos/id/10/200/300",
+      "Tomoya Aki has been obsessed with collecting anime and light novels for years, attaching himself to series with captivating stories and characters. Now, he wants to make his own game.",
+    imgUrl: "https://i.ytimg.com/vi/EPIIB1rbE2U/maxresdefault.jpg",
   },
   {
-    title: "Code Geass",
+    title: "Oregairu",
     body:
-      "Phasellus ullamcorper ipsum rutrum nunc. Nullam quis ante. Etiam ultricies nisi vel augue. Aenean tellus metus, bibendum sed, posuere ac, mattis non, nunc.",
-    imgUrl: "https://picsum.photos/id/12/200/300",
+      "Hachiman Hikigaya is an apathetic high school student with narcissistic and semi-nihilistic tendencies. He firmly believes that joyful youth is nothing but a farce.",
+    imgUrl:
+      "https://otakukart.com/wp-content/uploads/2020/04/Oregairu-Season-3.jpg",
   },
 ];
 
